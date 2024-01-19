@@ -8,14 +8,15 @@ Create: Seamlessly create new operator entries.<br>
 Update: Update existing operator details.<br>
 Remove: Remove operators from the database.<br>
 Display: Retrieve and display operator information.<br>
-
 <br>
-
 ## Technologies Used <br>
 Node.js: Leveraging the power of JavaScript for server-side development.<br>
 Express.js: A fast and minimalist web framework for Node.js.<br>
 MongoDB: A NoSQL database for flexible and scalable data storage.<br>
 Mongoose: An elegant MongoDB object modeling tool.<br>
 
-Getting Started
-Clone the repository: 
+## Getting Started: <br>
+- Clone the repository: https://github.com/MahekRohitGor/Operator_Crud_Api.git <br>
+- Install dependencies:<br> cd Operator_Crud_Api <br>  npm install <br>
+- Run Application: npm start <br>
+- Access the API: http://localhost:3000/operator
