@@ -1,0 +1,70 @@
+<!-- Your EJS Template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operator Detail</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+  <style>
+    /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+.operator-actions {
+  margin-top: 20px;
+}
+
+.back-link,
+.update-link,
+.remove-button {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.back-link:hover,
+.update-link:hover,
+.remove-button:hover {
+  background-color: #f0f0f0;
+}
+
+  </style>
+  <div class="container">
+    <h1>Operator Detail</h1>
+    <p><strong>Name:</strong> <%= operator.name %></p>
+    <p><strong>Email:</strong> <%= operator.email %></p>
+    <p><strong>Phone:</strong> <%= operator.phone %></p>
+    <div class="operator-actions">
+      <a href="/operator" class="remove-button">Back to Operators</a>
+      <a href="/operator/<%= operator._id %>/edit" class="update-link">Update</a>
+      <form id="deleteOperatorForm" action="/operator/<%= operator._id %>?_method=DELETE" method="POST" class="delete-form">
+        <button type="submit" class="back-link">Remove</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

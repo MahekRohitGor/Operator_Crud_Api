@@ -1,0 +1,104 @@
+<!-- Your EJS Template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operators Details</title>
+</head>
+<body>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+.operators-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.operator-item {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.operator-actions {
+  margin-top: 10px;
+}
+
+.details-link,
+.update-link,
+.create-user-link,
+.remove-button
+ {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form > button{
+  margin-top: 5px;
+}
+.remove-button:hover{
+  background-color: rgb(162, 53, 53);
+  color: #fff;
+}
+.update-link:hover{
+  background-color: green;
+  color: #fff;
+}
+.create-user-link:hover {
+  background-color: green;
+  color: #fff;
+}
+
+.details-link:hover
+{
+  background-color: green;
+  color: #fff;
+}
+
+  </style>
+  <div class="container">
+    <h1>Operators Details</h1>
+    <ul class="operators-list">
+      <% operators.forEach(operator => { %>
+        <li class="operator-item">
+          <p><strong>Name:</strong> <%= operator.name %></p>
+          <p><strong>Email:</strong> <%= operator.email %></p>
+          <p><strong>Phone:</strong> <%= operator.phone %></p>
+          <div class="operator-actions">
+            <a href="/operator/<%= operator._id %>" class="details-link">Details</a>
+            <a href="/operator/<%= operator._id %>/edit" class="update-link">Update</a>
+            <form action="/operator/<%= operator._id %>?_method=DELETE" method="POST" class="delete-form">
+              <button type="submit" class="remove-button">Remove</button>
+            </form>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+    <a href="/operator/new" class="create-user-link">Create User</a>
+  </div>
+</body>
+</html>
